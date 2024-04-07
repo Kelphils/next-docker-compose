@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  # this service should use the web image after you build it
+  web:
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    environment:
+      - NODE_ENV=production
+    restart: always
+    volumes:
+      - .:/volume
